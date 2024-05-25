@@ -1,0 +1,17 @@
+[package]
+name = "reglite"
+authors = ["KhulnaSoft Labs. <security@khulnasoft.com>"]
+repository = "https://github.com/khulnasoft-lab/reglite"
+license = "MIT"
+version = "0.0.1"
+edition = "2021"
+
+[dependencies]
+sqlite-loadable = { git = "https://github.com/khulnasoft-lab/dependency-sqlite-loadable-rs", branch = "khulnasoft", default-features = false }
+regex = "1"
+
+[features]
+default = ["static", "ignore-invalid"]
+dynamic = ["sqlite-loadable/dynamic"]
+static = ["sqlite-loadable/static"]
+ignore-invalid = []
